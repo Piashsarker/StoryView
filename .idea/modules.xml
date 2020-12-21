@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StoryViewDemo.iml" filepath="$PROJECT_DIR$/StoryViewDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/storyview/storyview.iml" filepath="$PROJECT_DIR$/storyview/storyview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StoryViewDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/StoryViewDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StoryViewDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StoryViewDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/storyview/StoryViewDemo.storyview.iml" filepath="$PROJECT_DIR$/.idea/modules/storyview/StoryViewDemo.storyview.iml" />
     </modules>
   </component>
 </project>

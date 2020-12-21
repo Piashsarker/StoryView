@@ -220,6 +220,7 @@ public class StoryView extends DialogFragment implements StoriesProgressView.Sto
 
     @Override
     public void nextStory() {
+        if(storiesList == null) return;
         if (counter + 1 >= storiesList.size()) {
             dismissAllowingStateLoss();
             return;
