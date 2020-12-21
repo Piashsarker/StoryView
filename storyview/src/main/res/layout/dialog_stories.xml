@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<omari.hamza.storyview.utils.PullDismissLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<omari.hamza.storyview.utils.PullDismissLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pull_dismiss_layout"
@@ -81,7 +82,7 @@
             android:id="@+id/titleCardView"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:cardCornerRadius="25dp"

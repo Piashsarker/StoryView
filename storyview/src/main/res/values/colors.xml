@@ -6,4 +6,6 @@
 
     <color name="gray_scale">#8affffff</color>
     <color name="white">#fff</color>
+    <color name="red">#FF5722</color>
+
 </resources>

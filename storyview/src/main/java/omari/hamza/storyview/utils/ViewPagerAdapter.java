@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
@@ -28,9 +29,9 @@ import omari.hamza.storyview.model.MyStory;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
-    private ArrayList<MyStory> images;
-    private Context context;
-    private StoryCallbacks storyCallbacks;
+    private final ArrayList<MyStory> images;
+    private final Context context;
+    private final StoryCallbacks storyCallbacks;
     private boolean storiesStarted = false;
 
     public ViewPagerAdapter(ArrayList<MyStory> images, Context context, StoryCallbacks storyCallbacks) {
@@ -53,26 +54,38 @@ public class ViewPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup collection, final int position) {
-
         LayoutInflater inflater = LayoutInflater.from(context);
 
         MyStory currentStory = images.get(position);
-
         final View view = inflater.inflate(R.layout.layout_story_item, collection, false);
-
         final ImageView mImageView = view.findViewById(R.id.mImageView);
+        final TextView txtBottomHashTag = view.findViewById(R.id.txtBottomHashTag);
+        final TextView txtBottomTitle = view.findViewById(R.id.txtBottomTitle);
+        final TextView txtBottomSubtitle = view.findViewById(R.id.txtBottomSubTitle);
+        final TextView txtBottomDescription = view.findViewById(R.id.txtBottomDescription);
+        final ImageView imgBottom = view.findViewById(R.id.imgLayoutBottom);
+        final ConstraintLayout bottomLayout = view.findViewById(R.id.layoutBottom);
 
-        if (!TextUtils.isEmpty(currentStory.getDescription())) {
-            TextView textView = view.findViewById(R.id.descriptionTextView);
-            textView.setVisibility(View.VISIBLE);
-            textView.setText(currentStory.getDescription());
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    storyCallbacks.onDescriptionClickListener(position);
-                }
-            });
+        if (!TextUtils.isEmpty(currentStory.getBottomDescription())) {
+            txtBottomDescription.setText(currentStory.getBottomDescription());
         }
+
+        if (!TextUtils.isEmpty(currentStory.getBottomTitle())) {
+            txtBottomTitle.setText(currentStory.getBottomTitle());
+        }
+        if (!TextUtils.isEmpty(currentStory.getBottomHashTag())) {
+            txtBottomHashTag.setText(currentStory.getBottomHashTag());
+        }
+        if (!TextUtils.isEmpty(currentStory.getBottomSubtitle())) {
+            txtBottomSubtitle.setText(currentStory.getBottomSubtitle());
+        }
+        if (!TextUtils.isEmpty(currentStory.getBottomPicUrl())) {
+            Glide.with(context).load(currentStory.getBottomPicUrl()).into(imgBottom);
+        }
+        bottomLayout.setOnClickListener(view1 -> {
+            storyCallbacks.onDescriptionClickListener(position);
+        });
+
 
         Glide.with(context)
                 .load(currentStory.getUrl())
@@ -100,7 +113,6 @@ public class ViewPagerAdapter extends PagerAdapter {
                 .into(mImageView);
 
         collection.addView(view);
-
         return view;
     }
 
