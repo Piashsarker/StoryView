@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
@@ -22,7 +23,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="#83000000"
         android:clickable="true"
-        android:padding="10dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:id="@+id/layoutBottom"
         android:orientation="horizontal"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,8 +39,8 @@
             tools:text="@string/hashtag"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="14sp"
-            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            android:paddingBottom="10dp"
             android:layout_marginRight="10dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -46,10 +50,10 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/layoutBottomCard"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:visibility="visible"
-            app:cardCornerRadius="25dp"
+            app:cardCornerRadius="50dp"
             app:cardPreventCornerOverlap="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBottomHashTag">
@@ -70,7 +74,7 @@
             android:layout_marginLeft="10dp"
             tools:text="@string/restaurant"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             app:layout_constraintLeft_toRightOf="@id/layoutBottomCard"
@@ -86,7 +90,7 @@
             android:layout_marginLeft="10dp"
             tools:text="@string/address"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/txtBottomTitle"
             android:layout_marginRight="8dp"
             app:layout_constraintLeft_toRightOf="@id/layoutBottomCard"
@@ -103,7 +107,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_height="wrap_content">
         </TextView>
